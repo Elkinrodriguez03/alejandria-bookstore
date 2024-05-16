@@ -40,10 +40,10 @@ export class Book {
   orderItems?: OrderItem[]
 
   authorPub: string
-  
+
   genre: string
 
   publisher: string
 
-  quantity: string
+  quantity: number
 }

@@ -34,7 +34,7 @@ export class BookCreateDto {
   @IsNotEmpty()
   publisher: string
 
-  @IsString()
+  @IsNumber()
   @IsNotEmpty()
   quantity: number
 

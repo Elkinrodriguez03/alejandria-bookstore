@@ -32,20 +32,26 @@ export default function PublishBookPage() {
       return
     }
 
-    const { title, description, price, authorPub, genre, publisher, quantity} = values
+    const { title, description, strPrice, authorPub, genre, publisher, strQuantity} = values
     const previewImageUrl = fileList[0]?.url
 
     try {
+      console.log("datos#####################")
+      let quantity: number = Number(strQuantity);
+      let price: number = Number(strPrice);
+      console.log(typeof quantity);
+      console.log(typeof price);
+      console.log("datos################")
       await Api.Book.createOneBySellerId(userId, {
         title,
         description,//not
         price,
         previewImageUrl,//not
-        authorId: userId,
+        authorId: 'e11838ab-d522-453d-b81e-ee3cb7f6178f',
         authorPub,
-        genre, //poner en el api
-        publisher, //poner en el api
-        quantity //poner en el api
+        genre, 
+        publisher, 
+        quantity
       })
       enqueueSnackbar('Libro publicado con éxito', { variant: 'success' })
       router.push('/my-books')
@@ -117,7 +123,7 @@ export default function PublishBookPage() {
             </Form.Item> */}
             <Form.Item
               label="Precio"
-              name="price"
+              name="strPrice"
               rules={[
                 {
                   required: true,
@@ -129,7 +135,7 @@ export default function PublishBookPage() {
             </Form.Item>
             <Form.Item
               label="Cantidad"
-              name="quantity"
+              name="strQuantity"
               rules={[
                 {
                   required: true,
