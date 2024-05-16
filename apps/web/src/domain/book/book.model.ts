@@ -38,4 +38,12 @@ export class Book {
   cartItems?: CartItem[]
 
   orderItems?: OrderItem[]
+
+  authorPub: string
+  
+  genre: string
+
+  publisher: string
+
+  quantity: string
 }

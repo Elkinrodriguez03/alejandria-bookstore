@@ -41,6 +41,18 @@ export class Book {
   @Column({ nullable: true })
   authorId?: string
 
+  @Column({})
+  genre: string
+  
+  @Column({})
+  publisher: string
+  
+  @Column({type: 'numeric'})
+  quantity: number
+
+  @Column({})
+  authorPub: string
+
   @ManyToOne(() => Author, parent => parent.books)
   @JoinColumn({ name: 'authorId' })
   author?: Author

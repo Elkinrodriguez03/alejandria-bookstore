@@ -44,7 +44,7 @@ export const NavigationLayout: React.FC<Props> = ({ children }) => {
 
     {
       key: '/sell',
-      label: 'Sell',
+      label: 'Publicar Libro',
       onClick: () => goTo('/sell'),
     },
 
