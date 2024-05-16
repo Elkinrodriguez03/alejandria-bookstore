@@ -67,9 +67,17 @@ export const LoginForm = ({ isLoading, onSubmit, onResetPassword }: Props) => {
       </Form.Item>
 
       <Form.Item>
-        <Button type="primary" htmlType="submit" loading={isLoading} block>
-          Ingresar
-        </Button>
+        <Flex justify="center">
+          <Button
+            type="primary"
+            htmlType="submit"
+            loading={isLoading}
+            block
+            style={{ width: '120px', backgroundColor: '#5B4D47' }}
+          >
+            Ingresar
+          </Button>
+        </Flex>
       </Form.Item>
     </Form>
   )

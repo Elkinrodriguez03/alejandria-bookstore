@@ -7,6 +7,7 @@ import { useAuthentication } from '@web/modules/authentication'
 import { GoogleOauth } from '@web/modules/googleOauth'
 import { GoogleButton } from '@web/modules/googleOauth/components/googleButton'
 import { Button, Flex, Typography } from 'antd'
+import Title from 'antd/es/typography/Title'
 import { useRouter } from 'next/navigation'
 import { useSnackbar } from 'notistack'
 import { useEffect } from 'react'
@@ -73,13 +74,28 @@ export default function LoginPage() {
 
   return (
     <>
-      <Flex align="center" justify="center" vertical flex={1}>
+      <Flex
+        align="center"
+        justify="center"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          boxShadow: '5px 5px 10px rgba(0, 0, 0, 0.2)',
+          padding: 0,
+          margin: '70px',
+          width: '900px',
+          height: '700px',
+          borderRadius: '30px',
+        }}
+      >
         <Flex
           vertical
           style={{
-            width: '340px',
-            paddingBottom: '100px',
-            paddingTop: '100px',
+            display: 'flex',
+            justifyContent: 'center',
+            width: '100%',
+            padding: '50px',
+            height: '700px',
           }}
           gap="middle"
         >
@@ -97,10 +113,41 @@ export default function LoginPage() {
           {GoogleOauth.useActive() && (
             <GoogleButton onSuccess={handleGoogleSuccess} onError={onError} />
           )}
-
+        </Flex>
+        <Flex
+          vertical
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            backgroundImage: 'url("background-login.png")',
+            backgroundSize: 'cover',
+            position: 'relative',
+            width: '100%',
+            padding: '50px',
+            height: '700px',
+            borderRadius: '0 30px 30px 0',
+          }}
+        >
+          <img
+            src="./Logo2.png"
+            alt="alejandria logo"
+            style={{
+              width: '70px',
+              height: '70px',
+              position: 'absolute',
+              top: '0px',
+              right: '0px',
+              margin: '10px',
+            }}
+          />
+          <Flex vertical align="center" style={{ paddingBottom: '50px' }}>
+            <Title level={3} style={{ margin: 0 }}>
+              Bienvenido de nuevo
+            </Title>
+            <Text type="secondary">Ingresa con tus datos personales</Text>
+          </Flex>
           <Button
-            ghost
-            style={{ border: 'none' }}
+            style={{ border: '3px', borderRadius: '50px' }}
             onClick={() => router.push(RouterObject.route.REGISTER)}
           >
             <Flex gap={'small'} justify="center">
