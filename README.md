@@ -1,9 +1,5 @@
 # Alejandria Book-Store
 
-## Documentation
-
-Learn more in the [official documentation](https://dev.marblism.com).
-
 ## Installation
 
 <div style="color: red;">
