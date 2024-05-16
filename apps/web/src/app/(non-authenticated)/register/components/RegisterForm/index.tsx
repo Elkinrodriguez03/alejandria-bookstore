@@ -26,28 +26,32 @@ export const RegisterForm = ({ isLoading, onSubmit }: Props) => {
       requiredMark={false}
     >
       <Form.Item
-        label="Email"
+        label="Correo Electrónico"
         name="email"
-        rules={[{ required: true, message: 'Email is required' }]}
+        rules={[{ required: true, message: 'Correo electronico requerido' }]}
       >
-        <Input type="email" placeholder="Your email" autoComplete="email" />
+        <Input
+          type="email"
+          placeholder="Tu correo electrónico"
+          autoComplete="email"
+        />
       </Form.Item>
       <Form.Item
         name="name"
-        rules={[{ required: true, message: 'Name is required' }]}
-        label="Name"
+        rules={[{ required: true, message: 'Nombre es requerido' }]}
+        label="Nombre"
       >
-        <Input placeholder="Your name" />
+        <Input placeholder="Tu nombre" />
       </Form.Item>
 
       <Form.Item
-        label="Password"
+        label="Contraseña"
         name="password"
-        rules={[{ required: true, message: 'Password is required' }]}
+        rules={[{ required: true, message: 'Contraseña requerida' }]}
       >
         <Input.Password
           type="password"
-          placeholder="Your password"
+          placeholder="Tu contraseña"
           autoComplete="current-password"
         />
       </Form.Item>
@@ -56,7 +60,7 @@ export const RegisterForm = ({ isLoading, onSubmit }: Props) => {
 
       <Form.Item>
         <Button type="primary" htmlType="submit" loading={isLoading} block>
-          Register
+          Registrar
         </Button>
       </Form.Item>
     </Form>

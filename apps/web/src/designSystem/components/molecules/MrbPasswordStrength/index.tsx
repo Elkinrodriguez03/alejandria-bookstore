@@ -41,7 +41,7 @@ export const MrbPasswordStrength: React.FC<Props> = ({ value, ...props }) => {
           </Col>
           <Col xs="fill">
             <Typography.Text type="secondary">
-              minimum 8 characters
+              mínimo 8 caracteres
             </Typography.Text>
           </Col>
         </Row>
@@ -55,7 +55,7 @@ export const MrbPasswordStrength: React.FC<Props> = ({ value, ...props }) => {
           <Col xs="fill">
             <Typography.Text type="secondary">
               {' '}
-              contains a number
+              debe contener un número
             </Typography.Text>
           </Col>
         </Row>
@@ -68,7 +68,7 @@ export const MrbPasswordStrength: React.FC<Props> = ({ value, ...props }) => {
           <Col xs="fill">
             <Typography.Text type="secondary">
               {' '}
-              contains uppercase letter
+              requiere una letra en mayúscula
             </Typography.Text>
           </Col>
         </Row>
@@ -80,8 +80,7 @@ export const MrbPasswordStrength: React.FC<Props> = ({ value, ...props }) => {
           </Col>
           <Col xs="fill">
             <Typography.Text type="secondary">
-              {' '}
-              contains special character
+              debe incluir un carácter especial{' '}
             </Typography.Text>
           </Col>
         </Row>

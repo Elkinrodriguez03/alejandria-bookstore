@@ -1,21 +1,21 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { Typography, Row, Col, Card, Avatar, Spin } from 'antd'
 import {
-  UserOutlined,
   BookOutlined,
   ShoppingCartOutlined,
+  UserOutlined,
 } from '@ant-design/icons'
-const { Title, Text, Paragraph } = Typography
-import { useAuthentication } from '@web/modules/authentication'
-import dayjs from 'dayjs'
-import { useSnackbar } from 'notistack'
-import { useRouter, useParams } from 'next/navigation'
 import { Api, Model } from '@web/domain'
 import { PageLayout } from '@web/layouts/Page.layout'
+import { useAuthentication } from '@web/modules/authentication'
+import { Avatar, Card, Col, Flex, Row, Spin, Typography } from 'antd'
+import dayjs from 'dayjs'
+import { useParams, useRouter } from 'next/navigation'
+import { useSnackbar } from 'notistack'
+import { useEffect, useState } from 'react'
+const { Title, Text, Paragraph } = Typography
 
-export default function HomePage() {
+export default function HomePageTest() {
   const router = useRouter()
   const params = useParams<any>()
   const authentication = useAuthentication()
@@ -54,10 +54,16 @@ export default function HomePage() {
 
   return (
     <PageLayout layout="narrow">
-      <Title level={2}>Welcome to Your Dashboard</Title>
-      <Paragraph>
-        Here you can find an overview of your account and activities.
-      </Paragraph>
+      <Flex
+        align="center"
+        justify="center"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+        }}
+      >
+        <Title level={2}>Libros que te recomendamos:</Title>
+      </Flex>
 
       <Row gutter={[16, 16]} justify="center">
         <Col xs={24} sm={12} md={8}>

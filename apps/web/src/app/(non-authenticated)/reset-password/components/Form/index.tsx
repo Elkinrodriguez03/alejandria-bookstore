@@ -21,15 +21,19 @@ export const ResetPasswordForm: React.FC<Props> = ({ isLoading, onSubmit }) => {
       requiredMark={false}
     >
       <Form.Item
-        label="Email"
+        label="Correo Electronico"
         name="email"
-        rules={[{ required: true, message: 'Email is required' }]}
+        rules={[{ required: true, message: 'Correo electrónico es requerido' }]}
       >
-        <Input type="email" placeholder="Your email" autoComplete="email" />
+        <Input
+          type="email"
+          placeholder="Tu correo electrónico"
+          autoComplete="email"
+        />
       </Form.Item>
       <Form.Item>
         <Button type="primary" htmlType="submit" loading={isLoading} block>
-          Reset Password
+          Restablecer contraseña
         </Button>
       </Form.Item>
     </Form>
