@@ -48,7 +48,7 @@ export default function RegisterPage() {
   }, [isSuccess])
 
   const onError = () => {
-    enqueueSnackbar('Could not register with Google', { variant: 'error' })
+    enqueueSnackbar('No se pudo registrar con Google', { variant: 'error' })
   }
 
   const onSuccess = async () => {
@@ -61,7 +61,7 @@ export default function RegisterPage() {
 
       router.push(RouterObject.route.HOME)
     } catch (error) {
-      enqueueSnackbar('Something went wrong with the initialization', {
+      enqueueSnackbar('Algo salió mal con la inicialización', {
         variant: 'error',
       })
     }
@@ -84,7 +84,7 @@ export default function RegisterPage() {
         style={{ width: '340px', paddingBottom: '100px', paddingTop: '100px' }}
         gap="middle"
       >
-        <Header description="Welcome!" />
+        <Header description="Bienvenido!" />
 
         <ErrorAlert errors={errors} />
 
@@ -100,7 +100,8 @@ export default function RegisterPage() {
           onClick={() => router.push(RouterObject.route.LOGIN)}
         >
           <Flex gap={'small'} justify="center">
-            <Text type="secondary">Have an account?</Text> <Text>Sign in</Text>
+            <Text type="secondary">¿Tienes una cuenta?</Text>{' '}
+            <Text>Iniciar sesión</Text>
           </Flex>
         </Button>
       </Flex>

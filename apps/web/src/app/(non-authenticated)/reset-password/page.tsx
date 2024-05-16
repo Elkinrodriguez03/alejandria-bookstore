@@ -39,7 +39,7 @@ export default function ResetPasswordPage() {
         style={{ width: '340px', paddingBottom: '100px', paddingTop: '100px' }}
         gap="middle"
       >
-        <Header description="You will receive a verification code" />
+        <Header description="Recibirás un código de verificación" />
 
         <ErrorAlert errors={errors} />
 
@@ -56,7 +56,7 @@ export default function ResetPasswordPage() {
             onClick={() => router.push(RouterObject.route.LOGIN)}
           >
             <Flex gap={'small'} justify="center">
-              <Text>Sign in</Text>
+              <Text>Iniciar sesión</Text>
             </Flex>
           </Button>
 
@@ -68,7 +68,7 @@ export default function ResetPasswordPage() {
             onClick={() => router.push(RouterObject.route.REGISTER)}
           >
             <Flex gap={'small'} justify="center">
-              <Text>Sign up</Text>
+              <Text>Registrarse</Text>
             </Flex>
           </Button>
         </Flex>
