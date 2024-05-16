@@ -33,21 +33,23 @@ export const LoginForm = ({ isLoading, onSubmit, onResetPassword }: Props) => {
       requiredMark={false}
     >
       <Form.Item
-        label="Email"
         name="email"
-        rules={[{ required: true, message: 'Email is required' }]}
+        rules={[{ required: true, message: 'Se requiere correo electronico' }]}
       >
-        <Input type="email" placeholder="Your email" autoComplete="email" />
+        <Input
+          type="email"
+          placeholder="Correo electronico"
+          autoComplete="email"
+        />
       </Form.Item>
 
       <Form.Item
-        label="Password"
         name="password"
-        rules={[{ required: true, message: 'Password is required' }]}
+        rules={[{ required: true, message: 'Se requiere contraseña' }]}
       >
         <Input.Password
           type="password"
-          placeholder="Your password"
+          placeholder="Contraseña"
           autoComplete="current-password"
         />
       </Form.Item>
@@ -59,14 +61,14 @@ export const LoginForm = ({ isLoading, onSubmit, onResetPassword }: Props) => {
             onClick={onResetPassword}
             style={{ padding: 0, margin: 0 }}
           >
-            Forgot password?
+            ¿Has olvidado tu contraseña?
           </Button>
         </Flex>
       </Form.Item>
 
       <Form.Item>
         <Button type="primary" htmlType="submit" loading={isLoading} block>
-          Sign in
+          Ingresar
         </Button>
       </Form.Item>
     </Form>

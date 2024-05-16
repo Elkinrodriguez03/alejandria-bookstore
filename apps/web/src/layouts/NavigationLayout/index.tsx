@@ -1,3 +1,4 @@
+import { ShoppingCartOutlined } from '@ant-design/icons'
 import { RouterObject } from '@web/core/router'
 import { useDesignSystem } from '@web/designSystem'
 import { Model } from '@web/domain'
@@ -36,21 +37,9 @@ export const NavigationLayout: React.FC<Props> = ({ children }) => {
 
   let itemsTopbar = [
     {
-      key: '/home',
-      label: 'Home',
-      onClick: () => goTo('/home'),
-    },
-
-    {
       key: '/catalog',
       label: 'Catalog',
       onClick: () => goTo('/catalog'),
-    },
-
-    {
-      key: '/cart',
-      label: 'Cart',
-      onClick: () => goTo('/cart'),
     },
 
     {
@@ -64,14 +53,15 @@ export const NavigationLayout: React.FC<Props> = ({ children }) => {
       label: 'My Published Books',
       onClick: () => goTo('/my-books'),
     },
+
+    {
+      key: '/cart',
+      label: <ShoppingCartOutlined style={{ fontSize: '20px' }} />,
+      onClick: () => goTo('/cart'),
+    },
   ]
 
   let itemsSubNavigation = [
-    {
-      key: '/home',
-      label: 'Home',
-    },
-
     {
       key: '/catalog',
       label: 'Catalog',

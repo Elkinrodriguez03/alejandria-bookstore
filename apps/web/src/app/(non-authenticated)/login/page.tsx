@@ -46,14 +46,16 @@ export default function LoginPage() {
   }, [isSuccess])
 
   const onError = () => {
-    enqueueSnackbar('Could not login with Google', { variant: 'error' })
+    enqueueSnackbar('No se pudo iniciar sesión con Google', {
+      variant: 'error',
+    })
   }
 
   const onSuccess = async () => {
     try {
       router.push(RouterObject.route.HOME)
     } catch (error) {
-      enqueueSnackbar('Something went wrong during the initialization', {
+      enqueueSnackbar('Algo salió mal durante la inicialización.', {
         variant: 'error',
       })
     }
@@ -81,7 +83,7 @@ export default function LoginPage() {
           }}
           gap="middle"
         >
-          <Header description="Welcome back!" />
+          <Header description="Bienvenido!" />
           <ErrorAlert errors={errors} />
 
           <LoginForm
@@ -102,7 +104,7 @@ export default function LoginPage() {
             onClick={() => router.push(RouterObject.route.REGISTER)}
           >
             <Flex gap={'small'} justify="center">
-              <Text type="secondary">No account?</Text> <Text>Sign up</Text>
+              <Text type="secondary">No tengo una cuenta!</Text>
             </Flex>
           </Button>
         </Flex>

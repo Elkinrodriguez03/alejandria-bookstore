@@ -55,7 +55,7 @@ export const Topbar: React.FC<Props> = ({
 
   return (
     <>
-      <Header style={style}>
+      <Header style={{ backgroundColor: '#C9D8B1' }}>
         <Flex align="center" style={style}>
           {logo}
 
