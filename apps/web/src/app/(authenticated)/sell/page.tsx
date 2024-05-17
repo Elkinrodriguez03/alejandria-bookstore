@@ -64,7 +64,7 @@ export default function PublishBookPage() {
     <PageLayout layout="narrow">
       <Row justify="center">
         <Col span={24}>
-          <Title level={2}>Publicar libro a la venta</Title>
+          <Title className='text-brown' level={2}>Publicar libro a la venta</Title>
         </Col>
       </Row>
       <Row justify="center">

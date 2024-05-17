@@ -44,10 +44,10 @@ export default function CatalogPage() {
   return (
     <PageLayout layout="narrow">
       <Title level={2} style={{ textAlign: 'center' }}>
-        Book Catalog
+        Catologo de libros
       </Title>
       <Paragraph style={{ textAlign: 'center' }}>
-        Browse through our collection of books available for purchase.
+        Busca tus libros favoritos en nuestra colección de libros disponibles.        
       </Paragraph>
       {loading ? (
         <Spin size="large" style={{ display: 'block', margin: 'auto' }} />

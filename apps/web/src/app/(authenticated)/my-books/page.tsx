@@ -42,10 +42,10 @@ export default function MyPublishedBooksPage() {
   return (
     <PageLayout layout="narrow">
       <Title level={2} style={{ textAlign: 'center' }}>
-        My Published Books
+        Mis libros publicados
       </Title>
       <Paragraph style={{ textAlign: 'center' }}>
-        Here you can find all the books you have published.
+        Aquí están todos los libros que has puesto a la venta.        
       </Paragraph>
       {loading ? (
         <Spin
@@ -65,7 +65,7 @@ export default function MyPublishedBooksPage() {
                 cover={
                   <img
                     alt={book.title}
-                    src={book.previewImageUrl || '/default-book-cover.jpg'}
+                    src={book.previewImageUrl || 'https://media.istockphoto.com/id/183890264/es/foto/vertical-el-libro-rojo-con-trazado-de-recorte.jpg?s=1024x1024&w=is&k=20&c=He80URzTmKqGcamjhVO3kQNKIEQIsJIcdWUlrq91Acs='}
                     style={{ height: '200px', objectFit: 'cover' }}
                   />
                 }
@@ -75,7 +75,14 @@ export default function MyPublishedBooksPage() {
                   title={book.title}
                   description={
                     <>
-                      <Text>{book.author?.name}</Text>
+                      <Text>{book.authorPub}</Text>
+                      <br />
+                      <Text>Precio: {book.price.toLocaleString(
+                        "es-CO", {
+                          style: "currency",
+                          currency: "COP"
+                        }
+                      )}</Text>
                       <br />
                       <Text type="secondary">
                         {dayjs(book.dateCreated).format('MMMM D, YYYY')}

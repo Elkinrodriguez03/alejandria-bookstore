@@ -73,7 +73,7 @@ export const Topbar: React.FC<Props> = ({
             {isLoggedIn && (
               <>
                 <TabAdmin />
-                <TabNotification />
+                {/* <TabNotification /> */}
                 <TabProfile />
               </>
             )}
