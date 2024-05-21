@@ -1,0 +1,3 @@
+Falta vincular bien el autor.
+Arreglar fetch del catalogo
+

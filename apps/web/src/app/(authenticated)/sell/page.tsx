@@ -32,21 +32,31 @@ export default function PublishBookPage() {
       return
     }
 
-    const { title, description, price } = values
+    const { title, description, strPrice, authorPub, genre, publisher, strQuantity} = values
     const previewImageUrl = fileList[0]?.url
 
     try {
+      console.log("datos#####################")
+      let quantity: number = Number(strQuantity);
+      let price: number = Number(strPrice);
+      console.log(typeof quantity);
+      console.log(typeof price);
+      console.log("datos################")
       await Api.Book.createOneBySellerId(userId, {
         title,
-        description,
+        description,//not
         price,
-        previewImageUrl,
-        authorId: userId,
+        previewImageUrl,//not
+        authorId: 'e11838ab-d522-453d-b81e-ee3cb7f6178f',
+        authorPub,
+        genre, 
+        publisher, 
+        quantity
       })
-      enqueueSnackbar('Book published successfully', { variant: 'success' })
+      enqueueSnackbar('Libro publicado con éxito', { variant: 'success' })
       router.push('/my-books')
     } catch (error) {
-      enqueueSnackbar('Failed to publish book', { variant: 'error' })
+      enqueueSnackbar('Hubo un fallo en la publicación del libro', { variant: 'error' })
     }
   }
 
@@ -54,41 +64,88 @@ export default function PublishBookPage() {
     <PageLayout layout="narrow">
       <Row justify="center">
         <Col span={24}>
-          <Title level={2}>Publish a Book for Sale</Title>
-          <Text>Fill in the details below to publish your book for sale.</Text>
+          <Title className='text-brown' level={2}>Publicar libro a la venta</Title>
         </Col>
       </Row>
       <Row justify="center">
         <Col span={24}>
           <Form layout="vertical" onFinish={onFinish}>
             <Form.Item
-              label="Title"
+              label="Título"
               name="title"
               rules={[
                 {
                   required: true,
-                  message: 'Please input the title of the book!',
+                  message: 'Por favor ingrese el título del libro',
                 },
               ]}
             >
               <Input />
             </Form.Item>
-            <Form.Item label="Description" name="description">
-              <Input.TextArea rows={4} />
-            </Form.Item>
             <Form.Item
-              label="Price"
-              name="price"
+              label="Autor"
+              name="authorPub"
               rules={[
                 {
                   required: true,
-                  message: 'Please input the price of the book!',
+                  message: 'Por favor ingrese el autor del libro',
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+            <Form.Item
+              label="Género"
+              name="genre"
+              rules={[
+                {
+                  required: true,
+                  message: 'Por favor ingrese el género del libro',
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+            <Form.Item
+              label="Editorial"
+              name="publisher"
+              rules={[
+                {
+                  required: true,
+                  message: 'Por favor ingrese la editorial del libro',
+                },
+              ]}
+            >
+              <Input />
+            </Form.Item>
+            {/* <Form.Item label="Description" name="description">
+              <Input.TextArea rows={4} />
+            </Form.Item> */}
+            <Form.Item
+              label="Precio"
+              name="strPrice"
+              rules={[
+                {
+                  required: true,
+                  message: 'Por favor ingrese el precio del libro',
                 },
               ]}
             >
               <Input type="number" />
             </Form.Item>
-            <Form.Item label="Preview Image" name="previewImageUrl">
+            <Form.Item
+              label="Cantidad"
+              name="strQuantity"
+              rules={[
+                {
+                  required: true,
+                  message: 'Por favor ingrese la cantidad de libros',
+                },
+              ]}
+            >
+              <Input type="number" />
+            </Form.Item>
+            {/* <Form.Item label="Preview Image" name="previewImageUrl">
               <Upload
                 fileList={fileList}
                 customRequest={handleUpload}
@@ -96,10 +153,10 @@ export default function PublishBookPage() {
               >
                 <Button icon={<UploadOutlined />}>Upload</Button>
               </Upload>
-            </Form.Item>
-            <Form.Item>
-              <Button type="primary" htmlType="submit">
-                Publish
+            </Form.Item> */}
+            <Form.Item className='center-div'>
+              <Button type="primary" htmlType="submit" className='center-button'>
+                Publicar
               </Button>
             </Form.Item>
           </Form>

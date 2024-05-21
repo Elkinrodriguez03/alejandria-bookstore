@@ -38,19 +38,19 @@ export const NavigationLayout: React.FC<Props> = ({ children }) => {
   let itemsTopbar = [
     {
       key: '/catalog',
-      label: 'Catalog',
+      label: 'Catalogo',
       onClick: () => goTo('/catalog'),
     },
 
     {
       key: '/sell',
-      label: 'Sell',
+      label: 'Publicar Libro',
       onClick: () => goTo('/sell'),
     },
 
     {
       key: '/my-books',
-      label: 'My Published Books',
+      label: 'Mis libros publicados',
       onClick: () => goTo('/my-books'),
     },
 
@@ -84,7 +84,7 @@ export const NavigationLayout: React.FC<Props> = ({ children }) => {
 
     {
       key: '/my-books',
-      label: 'My Published Books',
+      label: 'Mis libros publicados',
     },
   ]
 
@@ -94,11 +94,11 @@ export const NavigationLayout: React.FC<Props> = ({ children }) => {
       label: 'Profile',
       onClick: () => goTo(RouterObject.route.PROFILE),
     },
-    {
-      key: 'notifications',
-      label: 'Notifications',
-      onClick: () => goTo(RouterObject.route.NOTIFICATIONS),
-    },
+    // {
+    //   key: 'notifications',
+    //   label: 'Notifications',
+    //   onClick: () => goTo(RouterObject.route.NOTIFICATIONS),
+    // },
     ...itemsTopbar,
     ...itemsLeftbar,
   ]

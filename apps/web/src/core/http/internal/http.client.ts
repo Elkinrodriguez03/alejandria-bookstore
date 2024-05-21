@@ -73,8 +73,12 @@ export class HttpClient {
     const requestOptions: RequestInit = {
       ...this.getRequestOptions(),
       method: 'POST',
-      body: JSON.stringify(data),
+      body: JSON.stringify(data)
     }
+
+    console.log("request##########33")
+    console.log(data);
+    console.log(JSON.stringify(data));
 
     return fetch(`${this.baseUrl}${url}`, requestOptions).then(response => {
       return this.handleResponse(response)

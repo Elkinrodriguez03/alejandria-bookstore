@@ -1,9 +1,8 @@
 import {
-  IsBoolean,
   IsNotEmpty,
   IsNumber,
   IsOptional,
-  IsString,
+  IsString
 } from 'class-validator'
 
 export class BookCreateDto {
@@ -26,6 +25,22 @@ export class BookCreateDto {
   @IsString()
   @IsOptional()
   authorId?: string
+
+  @IsString()
+  @IsNotEmpty()
+  genre: string
+  
+  @IsString()
+  @IsNotEmpty()
+  publisher: string
+
+  @IsNumber()
+  @IsNotEmpty()
+  quantity: number
+
+  @IsString()
+  @IsNotEmpty()
+  authorPub: string
 
   @IsString()
   @IsOptional()

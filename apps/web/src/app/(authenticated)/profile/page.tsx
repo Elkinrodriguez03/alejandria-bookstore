@@ -58,9 +58,9 @@ export default function ProfilePage() {
   return (
     <PageLayout layout="super-narrow">
       <Flex justify="space-between" align="center">
-        <Typography.Title level={1}>Profile</Typography.Title>
+        <Typography.Title level={1}>Perfil</Typography.Title>
         <Button onClick={handleClickLogout} loading={isLoadingLogout}>
-          Logout
+          Cerrar sesión
         </Button>
       </Flex>
 

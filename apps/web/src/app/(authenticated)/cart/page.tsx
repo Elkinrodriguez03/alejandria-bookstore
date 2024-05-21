@@ -69,10 +69,9 @@ export default function ShoppingCartPage() {
 
   return (
     <PageLayout layout="narrow">
-      <Title level={2}>Shopping Cart</Title>
+      <Title level={2}>Carrito de compras</Title>
       <Text>
-        Your selected items are listed below. Review them before proceeding to
-        checkout.
+        
       </Text>
       <Row justify="center" style={{ marginTop: '20px' }}>
         <Col span={24}>
@@ -104,7 +103,7 @@ export default function ShoppingCartPage() {
               )}
             />
           ) : (
-            <Text>No items in your cart</Text>
+            <Text>Tu carrito luce vacío</Text>
           )}
         </Col>
       </Row>

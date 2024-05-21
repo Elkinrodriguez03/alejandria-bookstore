@@ -1,15 +1,13 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { Typography, Row, Col, Card, Spin } from 'antd'
-import { BookOutlined } from '@ant-design/icons'
-const { Title, Text, Paragraph } = Typography
-import { useAuthentication } from '@web/modules/authentication'
-import dayjs from 'dayjs'
-import { useSnackbar } from 'notistack'
-import { useRouter, useParams } from 'next/navigation'
 import { Api, Model } from '@web/domain'
 import { PageLayout } from '@web/layouts/Page.layout'
+import { useAuthentication } from '@web/modules/authentication'
+import { Card, Col, Row, Spin, Typography } from 'antd'
+import { useParams, useRouter } from 'next/navigation'
+import { useSnackbar } from 'notistack'
+import { useEffect, useState } from 'react'
+const { Title, Text, Paragraph } = Typography
 
 export default function CatalogPage() {
   const router = useRouter()
@@ -23,14 +21,10 @@ export default function CatalogPage() {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        // Assuming we have a method to fetch all book IDs or a paginated fetch method
-        // For demonstration, let's assume we have an array of book IDs
-        const bookIds = ['1', '2', '3'] // This should be fetched from an API that lists book IDs
-        const booksData = await Promise.all(
-          bookIds.map(id =>
-            Api.Book.findOne(id, { includes: ['author', 'seller'] }),
-          ),
-        )
+        const booksData = await Api.Book.findMany({
+          includes: ['author', 'seller'],
+        })
+
         setBooks(booksData)
       } catch (error) {
         enqueueSnackbar('Failed to fetch books', { variant: 'error' })
@@ -44,10 +38,10 @@ export default function CatalogPage() {
   return (
     <PageLayout layout="narrow">
       <Title level={2} style={{ textAlign: 'center' }}>
-        Book Catalog
+        Catologo de libros
       </Title>
       <Paragraph style={{ textAlign: 'center' }}>
-        Browse through our collection of books available for purchase.
+        Busca tus libros favoritos en nuestra colección de libros disponibles.
       </Paragraph>
       {loading ? (
         <Spin size="large" style={{ display: 'block', margin: 'auto' }} />

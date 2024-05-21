@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: root
       POSTGRES_DB: api
     ports:
-      - '5442:5432'
+      - '5440:5432'
   pgadmin:
     container_name: aSDpT2-alejandriabookstore-pgadmin4
     image: dpage/pgadmin4
