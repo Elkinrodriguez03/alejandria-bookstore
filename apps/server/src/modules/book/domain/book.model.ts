@@ -41,16 +41,16 @@ export class Book {
   @Column({ nullable: true })
   authorId?: string
 
-  @Column({})
+  @Column({ nullable: true })
   genre: string
-  
-  @Column({})
+
+  @Column({ nullable: true })
   publisher: string
-  
-  @Column({type: 'numeric'})
+
+  @Column({ type: 'numeric', nullable: true })
   quantity: number
 
-  @Column({})
+  @Column({ nullable: true })
   authorPub: string
 
   @ManyToOne(() => Author, parent => parent.books)
